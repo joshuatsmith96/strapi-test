@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "mainText": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

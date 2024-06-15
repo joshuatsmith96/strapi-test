@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_blocks_skills_sections",
+  "info": {
+    "displayName": "Skills Section"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    }
+  }
+}
