@@ -1,68 +1,59 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface BlocksAboutSection extends Schema.Component {
-  collectionName: 'components_blocks_about_sections';
+export interface ElementsSkillTile extends Schema.Component {
+  collectionName: 'components_elements_skill_tiles';
   info: {
-    displayName: 'About Section';
+    displayName: 'Skill Tile';
   };
   attributes: {
-    profileImage: Attribute.Media<'images'>;
-    title: Attribute.String;
-    paragraph: Attribute.Text;
+    Image: Attribute.Media<'images'>;
+    Alt_Text: Attribute.String;
   };
 }
 
-export interface BlocksHero extends Schema.Component {
-  collectionName: 'components_blocks_heroes';
+export interface SectionsAboutMeSection extends Schema.Component {
+  collectionName: 'components_sections_about_me_sections';
   info: {
-    displayName: 'Hero';
+    displayName: 'Text Section - Image Left';
+    description: '';
   };
   attributes: {
-    mainText: Attribute.String;
-    description: Attribute.String;
-  };
-}
-
-export interface BlocksSkillsSection extends Schema.Component {
-  collectionName: 'components_blocks_skills_sections';
-  info: {
-    displayName: 'Skills Section';
-  };
-  attributes: {
+    image: Attribute.Media<'images'>;
     header: Attribute.String;
+    paragraph: Attribute.String;
   };
 }
 
-export interface ElementsSkill extends Schema.Component {
-  collectionName: 'components_elements_skills';
+export interface SectionsRowCentered extends Schema.Component {
+  collectionName: 'components_sections_row_centereds';
   info: {
-    displayName: 'Skill';
+    displayName: 'Row - Centered';
   };
   attributes: {
-    skill: Attribute.Media<'images'>;
+    Skill_Tile: Attribute.Component<'elements.skill-tile', true>;
   };
 }
 
-export interface SeoMetaData extends Schema.Component {
-  collectionName: 'components_seo_meta_data';
+export interface SeoMetadata extends Schema.Component {
+  collectionName: 'components_seo_metadata';
   info: {
-    displayName: 'Meta Data';
+    displayName: 'metadata';
+    description: '';
   };
   attributes: {
-    metaTitle: Attribute.String;
-    description: Attribute.Text;
-    metaImage: Attribute.Media<'images', true>;
+    meta_title: Attribute.String & Attribute.DefaultTo<'Meta Title'>;
+    meta_description: Attribute.Text;
+    meta_image: Attribute.Media<'images'>;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'blocks.about-section': BlocksAboutSection;
-      'blocks.hero': BlocksHero;
-      'blocks.skills-section': BlocksSkillsSection;
-      'elements.skill': ElementsSkill;
-      'seo.meta-data': SeoMetaData;
+      'elements.skill-tile': ElementsSkillTile;
+      'sections.about-me-section': SectionsAboutMeSection;
+      'sections.row-centered': SectionsRowCentered;
+      'seo.metadata': SeoMetadata;
     }
   }
 }

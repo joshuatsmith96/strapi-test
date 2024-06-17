@@ -362,11 +362,11 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomePageHomePage extends Schema.CollectionType {
-  collectionName: 'home_pages';
+export interface ApiLandingPageLandingPage extends Schema.CollectionType {
+  collectionName: 'landing_pages';
   info: {
-    singularName: 'home-page';
-    pluralName: 'home-pages';
+    singularName: 'landing-page';
+    pluralName: 'landing-pages';
     displayName: 'Home Page';
     description: '';
   };
@@ -374,53 +374,20 @@ export interface ApiHomePageHomePage extends Schema.CollectionType {
     draftAndPublish: false;
   };
   attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-    metadata: Attribute.Component<'seo.meta-data', true>;
-    slug: Attribute.UID<'api::home-page.home-page', 'title'>;
-    aboutSection: Attribute.Component<'blocks.about-section'>;
+    slug: Attribute.UID;
+    meta_data: Attribute.Component<'seo.metadata'>;
+    about_section: Attribute.Component<'sections.about-me-section'>;
+    Skill_Section: Attribute.Component<'sections.row-centered'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::home-page.home-page',
+      'api::landing-page.landing-page',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiSkillSkill extends Schema.CollectionType {
-  collectionName: 'skills';
-  info: {
-    singularName: 'skill';
-    pluralName: 'skills';
-    displayName: 'Skill List';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    altText: Attribute.String;
-    skillImage: Attribute.Media<'images'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::skill.skill',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::skill.skill',
+      'api::landing-page.landing-page',
       'oneToOne',
       'admin::user'
     > &
@@ -864,8 +831,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::home-page.home-page': ApiHomePageHomePage;
-      'api::skill.skill': ApiSkillSkill;
+      'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -1,16 +1,19 @@
 {
-  "collectionName": "components_elements_skills",
+  "collectionName": "components_elements_skill_tiles",
   "info": {
-    "displayName": "Skill"
+    "displayName": "Skill Tile"
   },
   "options": {},
   "attributes": {
-    "skill": {
+    "Image": {
       "allowedTypes": [
         "images"
       ],
       "type": "media",
       "multiple": false
+    },
+    "Alt_Text": {
+      "type": "string"
     }
   }
 }

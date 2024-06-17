@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "Home Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid"
+    },
+    "meta_data": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.metadata"
+    },
+    "about_section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.about-me-section"
+    },
+    "Skill_Section": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.row-centered"
+    }
+  }
+}

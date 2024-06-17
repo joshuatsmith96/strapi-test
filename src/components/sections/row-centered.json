@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_sections_row_centereds",
+  "info": {
+    "displayName": "Row - Centered"
+  },
+  "options": {},
+  "attributes": {
+    "Skill_Tile": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.skill-tile"
+    }
+  }
+}
